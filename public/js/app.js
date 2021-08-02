@@ -3861,7 +3861,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Box = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system__WEBPACK_IMPORTED_MODULE_0__.color, styled_system__WEBPACK_IMPORTED_MODULE_0__.background, styled_system__WEBPACK_IMPORTED_MODULE_0__.space, styled_system__WEBPACK_IMPORTED_MODULE_0__.layout, styled_system__WEBPACK_IMPORTED_MODULE_0__.flexbox, styled_system__WEBPACK_IMPORTED_MODULE_0__.border, styled_system__WEBPACK_IMPORTED_MODULE_0__.shadow);
+var Box = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n"])), styled_system__WEBPACK_IMPORTED_MODULE_0__.color, styled_system__WEBPACK_IMPORTED_MODULE_0__.background, styled_system__WEBPACK_IMPORTED_MODULE_0__.space, styled_system__WEBPACK_IMPORTED_MODULE_0__.layout, styled_system__WEBPACK_IMPORTED_MODULE_0__.flexbox, styled_system__WEBPACK_IMPORTED_MODULE_0__.border, styled_system__WEBPACK_IMPORTED_MODULE_0__.shadow, (0,styled_system__WEBPACK_IMPORTED_MODULE_0__.system)({
+  cursor: true
+}));
 
 function BoxWrapper(_ref) {
   var children = _ref.children,
@@ -3876,6 +3878,7 @@ function BoxWrapper(_ref) {
       justifyContent: "center",
       width: "100%",
       height: "100%",
+      cursor: "not-allowed",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__.default, {
         type: "loader",
         spin: true,
@@ -3894,6 +3897,95 @@ BoxWrapper.defaultProps = {
   width: "100%"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BoxWrapper);
+
+/***/ }),
+
+/***/ "./resources/js/components/base/Button.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/base/Button.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_system__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-system */ "./node_modules/styled-system/dist/index.esm.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon */ "./resources/js/components/base/Icon.js");
+/* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Typography */ "./resources/js/components/base/Typography.js");
+/* harmony import */ var _Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Box */ "./resources/js/components/base/Box.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["children", "isLoading", "onClick"];
+
+var _templateObject;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_5__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n    ", "\n"])), styled_system__WEBPACK_IMPORTED_MODULE_0__.color, styled_system__WEBPACK_IMPORTED_MODULE_0__.background, styled_system__WEBPACK_IMPORTED_MODULE_0__.space, styled_system__WEBPACK_IMPORTED_MODULE_0__.layout, styled_system__WEBPACK_IMPORTED_MODULE_0__.flexbox, styled_system__WEBPACK_IMPORTED_MODULE_0__.border, styled_system__WEBPACK_IMPORTED_MODULE_0__.shadow, (0,styled_system__WEBPACK_IMPORTED_MODULE_0__.system)({
+  cursor: true
+}));
+
+function ButtonWrapper(_ref) {
+  var children = _ref.children,
+      isLoading = _ref.isLoading,
+      onClick = _ref.onClick,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Button, _objectSpread(_objectSpread({
+    onClick: isLoading ? null : function () {
+      return onClick();
+    }
+  }, props), {}, {
+    cursor: isLoading ? "not-allowed" : "pointer",
+    children: isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Icon__WEBPACK_IMPORTED_MODULE_1__.default, {
+        type: "loader",
+        spin: true,
+        size: "30",
+        color: "primary"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Typography__WEBPACK_IMPORTED_MODULE_2__.default, {
+        marginLeft: "1",
+        marginTop: "1",
+        children: "Loading..."
+      })]
+    }) : children
+  }));
+}
+
+ButtonWrapper.defaultProps = {
+  display: "flex",
+  cursor: "pointer",
+  backgroundColor: "grey",
+  border: "1px solid",
+  borderColor: "primary",
+  color: "primary",
+  paddingX: 6,
+  paddingY: 2,
+  width: "100%",
+  justifyContent: "center",
+  alignItems: "center"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonWrapper);
 
 /***/ }),
 
@@ -3973,7 +4065,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Box__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Box */ "./resources/js/components/base/Box.js");
 /* harmony import */ var styled_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-system */ "./node_modules/styled-system/dist/index.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["type", "placeholder", "label", "labelColor", "labelFontSize"];
+var _excluded = ["type", "placeholder", "label", "labelColor", "labelFontSize", "onChange", "value", "name", "margin", "marginBottom", "marginLeft", "marginRight", "marginTop", "width", "outlineFocusColor"];
 
 var _templateObject;
 
@@ -3995,31 +4087,66 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Input = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.input(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styled_system__WEBPACK_IMPORTED_MODULE_2__.color, styled_system__WEBPACK_IMPORTED_MODULE_2__.background, styled_system__WEBPACK_IMPORTED_MODULE_2__.space, styled_system__WEBPACK_IMPORTED_MODULE_2__.layout, styled_system__WEBPACK_IMPORTED_MODULE_2__.border, styled_system__WEBPACK_IMPORTED_MODULE_2__.shadow);
+var Input = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.input(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    ", "\n    ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  &:focus {\n      outline-style: none;\n      outline-color: ", "\n  }\n"])), styled_system__WEBPACK_IMPORTED_MODULE_2__.color, styled_system__WEBPACK_IMPORTED_MODULE_2__.background, styled_system__WEBPACK_IMPORTED_MODULE_2__.space, styled_system__WEBPACK_IMPORTED_MODULE_2__.layout, styled_system__WEBPACK_IMPORTED_MODULE_2__.border, styled_system__WEBPACK_IMPORTED_MODULE_2__.shadow, function (_ref) {
+  var outlineFocusColor = _ref.outlineFocusColor,
+      theme = _ref.theme;
+  return outlineFocusColor ? "".concat(theme.colors[outlineFocusColor], " !important;") : null;
+});
 
-function InputWrapper(_ref) {
-  var type = _ref.type,
-      _ref$placeholder = _ref.placeholder,
-      placeholder = _ref$placeholder === void 0 ? "Type here..." : _ref$placeholder,
-      label = _ref.label,
-      _ref$labelColor = _ref.labelColor,
-      labelColor = _ref$labelColor === void 0 ? "black" : _ref$labelColor,
-      labelFontSize = _ref.labelFontSize,
-      props = _objectWithoutProperties(_ref, _excluded);
+function InputWrapper(_ref2) {
+  var type = _ref2.type,
+      _ref2$placeholder = _ref2.placeholder,
+      placeholder = _ref2$placeholder === void 0 ? "Type here..." : _ref2$placeholder,
+      label = _ref2.label,
+      _ref2$labelColor = _ref2.labelColor,
+      labelColor = _ref2$labelColor === void 0 ? "white" : _ref2$labelColor,
+      labelFontSize = _ref2.labelFontSize,
+      onChange = _ref2.onChange,
+      value = _ref2.value,
+      name = _ref2.name,
+      margin = _ref2.margin,
+      marginBottom = _ref2.marginBottom,
+      marginLeft = _ref2.marginLeft,
+      marginRight = _ref2.marginRight,
+      marginTop = _ref2.marginTop,
+      width = _ref2.width,
+      _ref2$outlineFocusCol = _ref2.outlineFocusColor,
+      outlineFocusColor = _ref2$outlineFocusCol === void 0 ? "primary" : _ref2$outlineFocusCol,
+      props = _objectWithoutProperties(_ref2, _excluded);
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Box__WEBPACK_IMPORTED_MODULE_1__.default, {
     flexDirection: "column",
+    width: width,
+    margin: margin,
+    marginBottom: marginBottom,
+    marginRight: marginRight,
+    marginLeft: marginLeft,
+    marginTop: marginTop,
     children: [label ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Typography__WEBPACK_IMPORTED_MODULE_0__.default, {
       fontSize: labelFontSize,
       color: labelColor,
       marginBottom: "1",
       children: label
     }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Input, _objectSpread({
-      placeholder: placeholder
+      type: type,
+      value: value,
+      name: name,
+      placeholder: placeholder,
+      onChange: onChange,
+      width: "100%"
     }, props))]
   });
 }
 
+InputWrapper.defaultProps = {
+  paddingX: 4,
+  paddingY: 3,
+  border: "1px solid",
+  borderColor: "primary",
+  backgroundColor: "darkGrey",
+  color: "white",
+  borderRadius: 3
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InputWrapper);
 
 /***/ }),
@@ -4127,12 +4254,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Box": () => (/* reexport safe */ _Box__WEBPACK_IMPORTED_MODULE_0__.default),
 /* harmony export */   "Typography": () => (/* reexport safe */ _Typography__WEBPACK_IMPORTED_MODULE_1__.default),
 /* harmony export */   "Icon": () => (/* reexport safe */ _Icon__WEBPACK_IMPORTED_MODULE_2__.default),
-/* harmony export */   "Input": () => (/* reexport safe */ _Input__WEBPACK_IMPORTED_MODULE_3__.default)
+/* harmony export */   "Input": () => (/* reexport safe */ _Input__WEBPACK_IMPORTED_MODULE_3__.default),
+/* harmony export */   "Button": () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_4__.default)
 /* harmony export */ });
 /* harmony import */ var _Box__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Box */ "./resources/js/components/base/Box.js");
 /* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Typography */ "./resources/js/components/base/Typography.js");
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Icon */ "./resources/js/components/base/Icon.js");
 /* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input */ "./resources/js/components/base/Input.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Button */ "./resources/js/components/base/Button.js");
+
 
 
 
@@ -4153,7 +4283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Box": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Box),
 /* harmony export */   "Typography": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Typography),
 /* harmony export */   "Icon": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Icon),
-/* harmony export */   "Input": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Input)
+/* harmony export */   "Input": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Input),
+/* harmony export */   "Button": () => (/* reexport safe */ _base__WEBPACK_IMPORTED_MODULE_0__.Button)
 /* harmony export */ });
 /* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base */ "./resources/js/components/base/index.js");
 
@@ -4531,32 +4662,36 @@ __webpack_require__.r(__webpack_exports__);
 var palette = {
   white: "#fff",
   black: "#000",
-  blue: '#07c',
-  blues: ['#004170', '#006fbe', '#2d8fd5', '#5aa7de']
+  grey: '#585858',
+  darkGrey: "#4D4D4D",
+  darkerGrey: "#3F3B3B",
+  primary: "#4DCDB6"
 };
 var theme = {
   colors: {
     white: palette.white,
     black: palette.black,
-    blue: palette.blue,
-    blues: palette.blues
+    primary: palette.primary,
+    grey: palette.grey,
+    darkGrey: palette.darkGrey,
+    darkerGrey: palette.darkerGrey
   },
   fonts: ['Roboto'],
   // 0  1   2   3   4   5
   fontSizes: [12, 14, 16, 20, 24, 32],
   fontWeights: [],
   shadows: {},
-  // 0  1  2  3   4
-  space: [0, 4, 8, 16, 32],
+  // 0  1  2  3   4   5   6   7   8
+  space: [0, 4, 8, 16, 32, 48, 52, 68, 80],
   // variants
   buttons: {
     primary: {
       color: palette.white,
-      backgroundColor: palette.blue
+      backgroundColor: palette.primary
     },
     secondary: {
       color: palette.white,
-      backgroundColor: palette.blues[0]
+      backgroundColor: palette.primary
     }
   }
 }; // aliases
@@ -4912,8 +5047,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var initialState = {
-  email: '',
-  password: ''
+  email: "",
+  password: "",
+  isLoading: false
 };
 
 function Login() {
@@ -4923,10 +5059,11 @@ function Login() {
       setLoginData = _React$useState2[1];
 
   var email = loginData.email,
-      password = loginData.password;
+      password = loginData.password,
+      isLoading = loginData.isLoading;
 
   var setInput = function setInput(event) {
-    return setLoginData(function (prevState) {
+    setLoginData(function (prevState) {
       return _objectSpread(_objectSpread({}, prevState), {}, _defineProperty({}, event.target.name, event.target.value));
     });
   };
@@ -4938,26 +5075,45 @@ function Login() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
-              _config_api__WEBPACK_IMPORTED_MODULE_2__.default.login({
+              setLoginData(function (prevState) {
+                return _objectSpread(_objectSpread({}, prevState), {}, {
+                  isLoading: true
+                });
+              });
+              _context.next = 4;
+              return _config_api__WEBPACK_IMPORTED_MODULE_2__.default.login({
                 email: email,
                 password: password
               });
-              _context.next = 7;
-              break;
 
             case 4:
-              _context.prev = 4;
+              setLoginData(function (prevState) {
+                return _objectSpread(_objectSpread({}, prevState), {}, {
+                  isLoading: false
+                });
+              });
+              return _context.abrupt("return", react_toastify__WEBPACK_IMPORTED_MODULE_6__.toast.success("Logged in!", {
+                position: react_toastify__WEBPACK_IMPORTED_MODULE_6__.toast.POSITION.TOP_CENTER
+              }));
+
+            case 8:
+              _context.prev = 8;
               _context.t0 = _context["catch"](0);
+              setLoginData(function (prevState) {
+                return _objectSpread(_objectSpread({}, prevState), {}, {
+                  isLoading: false
+                });
+              });
               return _context.abrupt("return", react_toastify__WEBPACK_IMPORTED_MODULE_6__.toast.error("Login failed, please try again.", {
                 position: react_toastify__WEBPACK_IMPORTED_MODULE_6__.toast.POSITION.TOP_CENTER
               }));
 
-            case 7:
+            case 12:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 4]]);
+      }, _callee, null, [[0, 8]]);
     }));
 
     return function handleLogin() {
@@ -4967,31 +5123,53 @@ function Login() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components__WEBPACK_IMPORTED_MODULE_3__.Box, {
     flexDirection: "column",
-    backgroundColor: "blue",
+    backgroundColor: "darkerGrey",
     color: "white",
     width: "100%",
     height: "100vh",
-    isLoading: true,
+    isLoading: false,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_6__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
-      type: "H1",
-      children: "Login"
+      type: "H3",
+      marginTop: "4",
+      marginLeft: "5",
+      children: "RSSMerge"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components__WEBPACK_IMPORTED_MODULE_3__.Box, {
+      backgroundColor: "darkGrey",
       flexDirection: "column",
-      width: "40%",
+      alignItems: "center",
+      width: "35%",
+      height: "50vh",
       margin: "0 auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+      paddingX: "6",
+      paddingY: "4",
+      marginTop: "8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Input, {
+        placeholder: "Type your email here...",
         name: "email",
+        label: "Email",
         value: email,
+        width: "85%",
+        marginTop: "6",
         onChange: setInput
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Input, {
+        placeholder: "Type your password here...",
         name: "password",
+        label: "Password",
         type: "password",
+        width: "85%",
         value: password,
+        marginTop: 4,
+        marginBottom: 4,
         onChange: setInput
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+        marginTop: "4",
+        paddingY: "3",
+        width: "85%",
+        isLoading: isLoading,
         onClick: handleLogin,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
-          children: "Login"
+          fontWeight: "bold",
+          children: "LOGIN"
         })
       })]
     })]

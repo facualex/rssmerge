@@ -7,6 +7,7 @@ import {
     flexbox,
     border,
     shadow,
+    system,
 } from "styled-system";
 import Icon from "./Icon";
 import Typography from "./Typography";
@@ -14,11 +15,14 @@ import Typography from "./Typography";
 const Box = styled.div`
     ${color}
     ${background}
-  ${space}
-  ${layout}
-  ${flexbox}
-  ${border}
-  ${shadow}
+    ${space}
+    ${layout}
+    ${flexbox}
+    ${border}
+    ${shadow}
+    ${system({
+        cursor: true,
+    })}
 `;
 
 function BoxWrapper({ children, isLoading, ...props }) {
@@ -32,6 +36,7 @@ function BoxWrapper({ children, isLoading, ...props }) {
                     justifyContent="center"
                     width="100%"
                     height="100%"
+                    cursor="not-allowed"
                 >
                     <Icon type="loader" spin={true} size="30" color="white" />
                     <Typography marginTop="1">Loading...</Typography>

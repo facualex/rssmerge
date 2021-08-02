@@ -1,20 +1,19 @@
 const palette = {
         white: "#fff",
         black: "#000",
-        blue: '#07c',
-        blues: [
-          '#004170',
-          '#006fbe',
-          '#2d8fd5',
-          '#5aa7de',
-        ]
+        grey: '#585858',
+        darkGrey: "#4D4D4D",
+        darkerGrey: "#3F3B3B",
+        primary: "#4DCDB6",
 }
 const theme = {
     colors: {
         white: palette.white,
         black: palette.black,
-        blue: palette.blue,
-        blues: palette.blues, 
+        primary: palette.primary,
+        grey: palette.grey,
+        darkGrey: palette.darkGrey,
+        darkerGrey: palette.darkerGrey,
     },
     fonts: ['Roboto'],
 
@@ -24,18 +23,18 @@ const theme = {
     fontWeights: [],
     shadows: {},
 
-         // 0  1  2  3   4
-    space: [0, 4, 8, 16, 32],
+         // 0  1  2  3   4   5   6   7   8
+    space: [0, 4, 8, 16, 32, 48, 52, 68, 80],
     
     // variants
     buttons: {
         primary: {
           color: palette.white,
-          backgroundColor: palette.blue,
+          backgroundColor: palette.primary,
         },
         secondary: {
           color: palette.white,
-          backgroundColor: palette.blues[0],
+          backgroundColor: palette.primary, 
         },
     }
 }

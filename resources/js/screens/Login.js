@@ -1,28 +1,53 @@
-import React from "react"
+import React from "react";
 import API from "../config/api";
-import { Box, Typography } from "../components"
-import { ToastContainer, toast } from 'react-toastify';
+import { Box, Typography, Input, Button } from "../components";
+import { ToastContainer, toast } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
-    email: '',
-    password: '',
-}
+    email: "",
+    password: "",
+    isLoading: false,
+};
 
 function Login() {
     const [loginData, setLoginData] = React.useState(initialState);
 
-    const { email, password } = loginData; 
+    const { email, password, isLoading } = loginData;
 
-    const setInput = (event) => setLoginData(prevState => ({ ...prevState, [event.target.name]: event.target.value }));
+    const setInput = (event) => {
+        setLoginData((prevState) => ({
+            ...prevState,
+            [event.target.name]: event.target.value,
+        }));
+    };
 
     const handleLogin = async () => {
         try {
-            API.login({ email, password })
-        } catch(error) {
+            setLoginData((prevState) => ({
+                ...prevState,
+                isLoading: true,
+            }));
+
+            await API.login({ email, password });
+
+            setLoginData((prevState) => ({
+                ...prevState,
+                isLoading: false,
+            }));
+
+            return toast.success("Logged in!", {
+                position: toast.POSITION.TOP_CENTER,
+            });
+        } catch (error) {
+            setLoginData((prevState) => ({
+                ...prevState,
+                isLoading: false,
+            }));
+
             return toast.error("Login failed, please try again.", {
-                position: toast.POSITION.TOP_CENTER
+                position: toast.POSITION.TOP_CENTER,
             });
         }
     };
@@ -30,23 +55,59 @@ function Login() {
     return (
         <Box
             flexDirection="column"
-            backgroundColor="blue"
+            backgroundColor="darkerGrey"
             color="white"
             width="100%"
             height="100vh"
-            isLoading={true}
+            isLoading={false}
         >
             <ToastContainer />
-            <Typography type="H1">Login</Typography>
-            <Box flexDirection="column" width="40%" margin="0 auto">
-                <input name="email" value={email} onChange={setInput} />
-                <input name="password" type="password" value={password} onChange={setInput} />
-                <button onClick={handleLogin}>
-                    <Typography>Login</Typography>
-                </button>
+            <Typography type="H3" marginTop="4" marginLeft="5">
+                RSSMerge
+            </Typography>
+            <Box
+                backgroundColor="darkGrey"
+                flexDirection="column"
+                alignItems="center"
+                width="35%"
+                height="50vh"
+                margin="0 auto"
+                paddingX="6"
+                paddingY="4"
+                marginTop="8"
+            >
+                <Input
+                    placeholder="Type your email here..."
+                    name="email"
+                    label="Email"
+                    value={email}
+                    width="85%"
+                    marginTop="6"
+                    onChange={setInput}
+                />
+                <Input
+                    placeholder="Type your password here..."
+                    name="password"
+                    label="Password"
+                    type="password"
+                    width="85%"
+                    value={password}
+                    marginTop={4}
+                    marginBottom={4}
+                    onChange={setInput}
+                />
+                <Button
+                    marginTop="4"
+                    paddingY="3"
+                    width="85%"
+                    isLoading={isLoading}
+                    onClick={handleLogin}
+                >
+                    <Typography fontWeight="bold">LOGIN</Typography>
+                </Button>
             </Box>
         </Box>
-    )
+    );
 }
 
-export default Login
+export default Login;
