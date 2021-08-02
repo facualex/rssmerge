@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Feed;
 use App\Models\FeedMix;
 use Illuminate\Database\Eloquent\Builder;
+use \SimpleXMLElement;
+use \DomDocument;
+use App\Utils\MergeRSS;
 
 class FeedController extends Controller
 {
@@ -80,48 +83,54 @@ class FeedController extends Controller
             'feed_type_id' => $fields['feed_type_id'],
         ]);
 
+        // FIXME: It is not merging correctly, the result xml file
+        // only displays the $remoteFeed but overrides the $currentFeedString
+
         $isYoutubeFeed = $feed->feed_type_id == 1; // feed_type_id = 1 -> YouTube
 
+        $dom = new DOMDocument;
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+
+        $dom->load(public_path()."/xml/".$destinationFeedMixToCreateFeedInto->urlIdentifier.".xml");
+        $currentFeedString = simplexml_load_string($dom->saveXML());
+
+        if (!isset($dom)) {
+                // If the xml file doesn't exist, create it and update the urlIdentifier
+                // of the corresponding FeedMix (this should only happen in strange cases, 
+                // for example, if the user manually deletes the xml file from the public folder)
+                return;
+        }
 
         if (!$isYoutubeFeed) {
             // At this stage, an xml file for the feed mix should exist because it
             // is created when the user creates the feed mix. 
             // An existing feed mix is required to create a feed. 
 
-            // Get the current xml file and merge it with the new feed
-            $dom = new DOMDocument();
-            $dom->preserveWhiteSpace = false;
-            $dom->formatOutput = true;
-
-            $currentFeedMixXmlFile = $dom->load(public_path()."/xml/".$destinationFeedMixToCreateFeedInto->urlIdentifier.".xml");
-
-            if (!isset($currentFeedMixXmlFile)) {
-                // If the xml file doesn't exist, create it and update the urlIdentifier
-                // of the corresponding FeedMix (this should only happen in strange cases, 
-                // for example, if the user manually deletes the xml file from the public folder)
-            }
-
             // Make sure the following option is activated in php.ini on the server:
             // allow_url_fopen = On 
             // for parsing the feeds from url
             $remoteFeed = simplexml_load_file($feed->feedOrigin);
 
-            // TODO: Merge remote feed with currentFeedMixXmlFIle
-
-            $dom->loadXML($initialXML->asXML());
-
-            // Save the merge
-            $dom->save(public_path().'/xml/'.$urlIdentifier.'.xml');
-
+            $mergedFeed = (new MergeRSS)->merge_rss(array($currentFeedString, $remoteFeed));
+        } else {
+            //  - If it is a youtube feed, load the rss with youtube format
+            $youtubeFeedUrl = "https://www.youtube.com/feeds/videos.xml?channel_id=".$feed->feedOrigin;
+            $remoteFeed = simplexml_load_file($youtubeFeedUrl); 
+            $mergedFeed = (new MergeRSS)->merge_rss(array($currentFeedString, $remoteFeed));
         }
 
-        //  - If it is a youtube feed, load the rss with youtube format
+        $dom->loadXML($mergedFeed->asXML());
 
-        // 3. Save updated xml file
+        // Save updated xml file
+        $dom->save(public_path().'/xml/'.$destinationFeedMixToCreateFeedInto->urlIdentifier.'.xml');
 
         $response = [
             'success' => true,
             'data' => $feed,
+            'currentFeedString' => $currentFeedString,
+            'mergedFeed' => $mergedFeed,
+            'remoteFeed' => $remoteFeed
         ];
 
         return response($response, 200);

@@ -65,7 +65,7 @@ class FeedMixController extends Controller
 
         $dom = new DOMDocument;
         $dom->preserveWhiteSpace = false;
-        $doc->formatOutput = true;
+        $dom->formatOutput = true;
         $dom->loadXML($initialXML->asXML());
 
         //Save XML as a file
