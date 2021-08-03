@@ -1,4 +1,4 @@
-import { Box, Typography, Icon, Input, Button } from "./base"
+import { Box, Typography, Icon, Input, Button, FullPageLoader } from "./base"
 
 export { 
     Box,
@@ -6,4 +6,5 @@ export {
     Icon,
     Input,
     Button,
+    FullPageLoader,
 };

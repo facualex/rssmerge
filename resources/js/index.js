@@ -1,21 +1,15 @@
 import React from 'react';
-import { Login } from "./screens"
 import ReactDOM from 'react-dom';
 import AppProviders from './context/AppProviders';
 import { useAuth } from './context/AuthProvider';
+import { FullPageLoader } from './components';
 
-// TODO: Lazy load AuthenticatedApp and UnauthenticatedApp
-function AuthenticatedApp() {
-    return <h1>Authenticated!</h1>
-}
-
-function UnauthenticatedApp() {
-    return <Login />
-}
+const AuthenticatedApp = React.lazy(() => import('./screens/AuthenticatedApp'))
+const UnauthenticatedApp = React.lazy(() => import('./screens/UnauthenticatedApp'))
 
 function App() {
     const { user } = useAuth()
-    console.log(user)
+
     return user?.userId ? <AuthenticatedApp /> : <UnauthenticatedApp />
 }
 
@@ -24,6 +18,8 @@ export default App;
 if (document.getElementById('root')) {
     ReactDOM.render(
     <AppProviders>
-        <App />
+        <React.Suspense fallback={<FullPageLoader />}>
+            <App />
+        </React.Suspense>
     </AppProviders>, document.getElementById('root'));
 }

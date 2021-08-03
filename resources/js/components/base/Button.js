@@ -24,15 +24,28 @@ const Button = styled.div`
     ${system({
         cursor: true,
     })}
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: ${({ hoverProps, theme }) =>
+            hoverProps?.backgroundColor ? theme.colors[hoverProps.backgroundColor] : null};
+    }
 `;
 
-function ButtonWrapper({ children, isLoading, onClick, ...props }) {
+function ButtonWrapper({ children, isLoading, onClick, hoverProps, ...props }) {
     return (
-        <Button onClick={isLoading ? null : () => onClick()} {...props} cursor={isLoading ? "not-allowed" : "pointer"}>
+        <Button
+            onClick={isLoading ? null : () => onClick()}
+            {...props}
+            cursor={isLoading ? "not-allowed" : "pointer"}
+            hoverProps={hoverProps}
+        >
             {isLoading ? (
                 <>
                     <Icon type="loader" spin={true} size="30" color="primary" />
-                    <Typography marginLeft="1" marginTop="1">Loading...</Typography>
+                    <Typography marginLeft="1" marginTop="1">
+                        Loading...
+                    </Typography>
                 </>
             ) : (
                 children
@@ -53,6 +66,9 @@ ButtonWrapper.defaultProps = {
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
+    hoverProps: {
+        backgroundColor: "darkerGrey",
+    },
 };
 
 export default ButtonWrapper;

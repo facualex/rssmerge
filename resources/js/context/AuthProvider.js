@@ -1,5 +1,5 @@
 import React from 'react';
-import API, { setAuthToken } from '../config/api';
+import API from '../config/api';
 
 const AuthContext = React.createContext();
 AuthContext.displayName = 'AuthContext';
@@ -11,19 +11,24 @@ const initialState = {
 function AuthProvider({ children }) {
     const [user, setUser] = React.useState(initialState);
 
+    // FIXME: TOken must be set, AND MUST BE A VALID ONE!
+    // It's not enough to check for a token to say the user
+    // is authenticated
     React.useEffect(() => {
-        if (localStorage.getItem('token')) {
-          setUser(prevState => ({...prevState, userId: 1 }));
+        if(localStorage.getItem('token')) {
+            setUser(prevState => ({...prevState, userId: 1 }));
         }
-    }, []);
+    }, [])
 
     const login = async (loginData) => {
         try {
             const { user, token } = await API.login(loginData);
+            console.log(user, token)
 
-            localStorage.setItem('token', token);
-
-            setUser(prevState => ({...prevState, userId: user.id }));
+            if (token && user) {
+                localStorage.setItem('token', token);
+                setUser(prevState => ({...prevState, userId: user.id }));
+            }
         } catch(error) {
             console.log(error);
         }

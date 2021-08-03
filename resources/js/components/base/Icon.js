@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { FiLoader } from "react-icons/fi";
 
 const rotate = keyframes`
@@ -21,11 +21,13 @@ const availableIcons = {
     loader: FiLoader,
 }
 
-function Icon({ type, spin=false, ...props }) {
-    const Selected = availableIcons[type] ?? null;
-    const SelectedIcon = spin ? Rotatable(Selected) : Selected;
+function Icon({ type, spin = false, color, ...props }) {
+    const theme = useTheme();
 
-    return <SelectedIcon {...props} />
+    const Selected = availableIcons[type] ?? null;
+    const RotatableSelectedIcon = Rotatable(Selected); 
+
+    return spin ? <RotatableSelectedIcon color={color ? theme.colors[color] : 'black'} {...props} /> : <Selected {...props} />
 }
 
 export default Icon;

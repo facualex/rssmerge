@@ -8,13 +8,27 @@ const AxiosInstance = axios.create({ baseURL, headers: {
 
 const API = {};
 
-export function setAuthToken(token) {
-    if (token) {
-        AxiosInstance.defaults.headers.common['Authorization'] = token;
-    } else {
-        delete AxiosInstance.defaults.headers.common['Authorization'];
-    }
-}
+AxiosInstance.interceptors.request.use(
+    async config => {
+        const token = localStorage.getItem("token");
+
+        if (token) {
+            config.headers = { 'Authorization': `Bearer ${token}`,}
+        }
+        
+        return config;
+    },
+    error => {
+      Promise.reject(error)
+  });
+
+AxiosInstance.interceptors.response.use((response) => {
+    const { data } = response;
+
+    return data;
+}, (error) => {
+    return Promise.reject(error.message);
+})
 
 // AUTH
 API.register = async (registrationData) => await AxiosInstance.post("/register", registrationData);

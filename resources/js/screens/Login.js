@@ -1,7 +1,9 @@
 import React from "react";
 import API from "../config/api";
 import { Box, Typography, Input, Button } from "../components";
+import { useAuth } from '../context/AuthProvider';
 import { ToastContainer, toast } from "react-toastify";
+
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -12,6 +14,7 @@ const initialState = {
 };
 
 function Login() {
+    const { login } = useAuth()
     const [loginData, setLoginData] = React.useState(initialState);
 
     const { email, password, isLoading } = loginData;
@@ -30,7 +33,7 @@ function Login() {
                 isLoading: true,
             }));
 
-            await API.login({ email, password });
+            await login({ email, password}) 
 
             setLoginData((prevState) => ({
                 ...prevState,
@@ -41,6 +44,7 @@ function Login() {
                 position: toast.POSITION.TOP_CENTER,
             });
         } catch (error) {
+            console.log("CAAAATCH")
             setLoginData((prevState) => ({
                 ...prevState,
                 isLoading: false,
@@ -75,6 +79,10 @@ function Login() {
                 paddingX="6"
                 paddingY="4"
                 marginTop="8"
+                boxShadow="main"
+                border="1px solid"
+                borderColor="primary"
+                borderRadius="3px"
             >
                 <Input
                     placeholder="Type your email here..."

@@ -21,7 +21,9 @@ const theme = {
     fontSizes: [12, 14, 16, 20, 24, 32],
 
     fontWeights: [],
-    shadows: {},
+    shadows: {
+      main: "0px 3px 18px 3px rgba(255,255,255,0.1)",
+    },
 
          // 0  1  2  3   4   5   6   7   8
     space: [0, 4, 8, 16, 32, 48, 52, 68, 80],

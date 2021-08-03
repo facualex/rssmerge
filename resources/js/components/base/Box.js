@@ -8,6 +8,7 @@ import {
     border,
     shadow,
     system,
+    grid,
 } from "styled-system";
 import Icon from "./Icon";
 import Typography from "./Typography";
@@ -20,6 +21,7 @@ const Box = styled.div`
     ${flexbox}
     ${border}
     ${shadow}
+    ${grid}
     ${system({
         cursor: true,
     })}
