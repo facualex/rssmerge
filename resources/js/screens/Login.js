@@ -1,11 +1,7 @@
 import React from "react";
-import API from "../config/api";
 import { Box, Typography, Input, Button } from "../components";
 import { useAuth } from '../context/AuthProvider';
 import { ToastContainer, toast } from "react-toastify";
-
-
-import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
     email: "",
@@ -44,7 +40,6 @@ function Login() {
                 position: toast.POSITION.TOP_CENTER,
             });
         } catch (error) {
-            console.log("CAAAATCH")
             setLoginData((prevState) => ({
                 ...prevState,
                 isLoading: false,

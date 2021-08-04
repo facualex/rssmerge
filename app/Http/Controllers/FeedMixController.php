@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Webpatser\Uuid\Uuid;
 use \SimpleXMLElement;
 use \DomDocument;
+use App\Utils\Serialize;
 
 class FeedMixController extends Controller
 {
@@ -21,12 +22,14 @@ class FeedMixController extends Controller
     {
         $loggedUser = $request->user();
 
-        $userMixes = FeedMix::whereHas('feeds', function (Builder $query) use($loggedUser) {
-            return $query->where('user_id', '=', $loggedUser->id);
-        })->get();
+        $userMixes = FeedMix::where('user_id', $loggedUser->id)->get();
+
+        $serialized = (new Serialize)->serialize($userMixes);
+
+        ['elements' => $feedMixes, 'elementsById' => $feedMixesById] = $serialized;
 
         return response()->json([
-            'data' => $userMixes,
+            'data' => ["feedMixes" => $feedMixes, "feedMixesById" => $feedMixesById],
             'success' => true,
         ]);
     }

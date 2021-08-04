@@ -8,6 +8,7 @@ import {
     border,
     shadow,
     system,
+    position,
 } from "styled-system";
 import Icon from "./Icon";
 import Typography from "./Typography";
@@ -21,6 +22,7 @@ const Button = styled.div`
     ${flexbox}
     ${border}
     ${shadow}
+    ${position}
     ${system({
         cursor: true,
     })}

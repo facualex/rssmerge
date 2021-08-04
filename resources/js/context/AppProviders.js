@@ -1,15 +1,16 @@
 import React from 'react';
 import {AuthProvider} from './AuthProvider';
+import {FeedMixProvider} from './FeedMixProvider';
 import { ThemeProvider } from 'styled-components'
 import theme from '../config/theme'
 
-
-// TODO: Add Theme Provider
 function AppProviders({children}) {
   return (
     <AuthProvider>
       <ThemeProvider theme={theme}>
-        {children}
+        <FeedMixProvider>
+          {children}
+        </FeedMixProvider>
       </ThemeProvider>
     </AuthProvider>
   )

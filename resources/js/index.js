@@ -4,6 +4,8 @@ import AppProviders from './context/AppProviders';
 import { useAuth } from './context/AuthProvider';
 import { FullPageLoader } from './components';
 
+import "react-toastify/dist/ReactToastify.css";
+
 const AuthenticatedApp = React.lazy(() => import('./screens/AuthenticatedApp'))
 const UnauthenticatedApp = React.lazy(() => import('./screens/UnauthenticatedApp'))
 

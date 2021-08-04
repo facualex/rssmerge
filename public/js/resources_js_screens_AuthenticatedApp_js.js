@@ -4,44 +4,9 @@
 /*!**************************************************!*\
   !*** ./resources/js/screens/AuthenticatedApp.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _context_AuthProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/AuthProvider */ "./resources/js/context/AuthProvider.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-function AuthenticatedApp() {
-  var _useAuth = (0,_context_AuthProvider__WEBPACK_IMPORTED_MODULE_1__.useAuth)(),
-      logout = _useAuth.logout;
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_components__WEBPACK_IMPORTED_MODULE_2__.Box, {
-    backgroundColor: "darkerGrey",
-    height: "100vh",
-    flexDirection: "column",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components__WEBPACK_IMPORTED_MODULE_2__.Typography, {
-      color: "white",
-      type: "H1",
-      children: "Authenticated!"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-      maxWidth: "20%",
-      onClick: logout,
-      children: "Logout"
-    })]
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AuthenticatedApp);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/facualex/Documents/development/personal/rss-merge/resources/js/screens/AuthenticatedApp.js: Unexpected token, expected \"}\" (13:36)\n\n\u001b[0m \u001b[90m 11 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mLayout\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mTypography\u001b[39m color\u001b[33m=\u001b[39m\u001b[32m\"white\"\u001b[39m type\u001b[33m=\u001b[39m\u001b[32m\"H1\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m                 {selectedFeedMixName\u001b[33m;\u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mTypography\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mLayout\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m     )\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:788:17)\n    at Object.raiseWithData (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:781:17)\n    at Object.raise (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.unexpected (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:9929:16)\n    at Object.expect (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:9903:28)\n    at Object.jsxParseExpressionContainer (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:5076:10)\n    at Object.jsxParseElementAt (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:5167:36)\n    at Object.jsxParseElementAt (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:5152:32)\n    at Object.jsxParseElement (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:5210:17)\n    at Object.parseExprAtom (/Users/facualex/Documents/development/personal/rss-merge/node_modules/@babel/parser/lib/index.js:5217:19)");
 
 /***/ })
 

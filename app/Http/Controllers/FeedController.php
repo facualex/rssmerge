@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use \SimpleXMLElement;
 use \DomDocument;
 use App\Utils\MergeRSS;
+use App\Utils\Serialize;
 
 class FeedController extends Controller
 {
@@ -32,9 +33,13 @@ class FeedController extends Controller
             array_push($feeds, ...$feedsFromMix);
         }
 
+        $serialized = (new Serialize)->serialize($feeds);
+
+        ['elements' => $feeds, 'elementsById' => $feedsById] = $serialized;
+
         $response = [
             'success' => true,
-            'data' => $feeds
+            'data' => ["feeds" => $feeds, "feedsById" => $feedsById],
         ];
 
         return response($response, 200);

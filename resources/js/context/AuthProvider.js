@@ -23,7 +23,6 @@ function AuthProvider({ children }) {
     const login = async (loginData) => {
         try {
             const { user, token } = await API.login(loginData);
-            console.log(user, token)
 
             if (token && user) {
                 localStorage.setItem('token', token);

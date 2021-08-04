@@ -5,23 +5,25 @@ import Sidebar from "./Sidebar";
 
 function Layout({ children }) {
     return (
-        <>
+        <Box display="block" height="100%">
             <Header
                 backgroundColor="darkGrey"
                 alignItems="center"
                 justifyContent="space-between"
-                height="2rem"
+                height="15vh"
+                paddingX="8"
             />
-            <Sidebar
-                flexDirection="column"
-                backgroundColor="grey"
-                alignItems="center"
-                justifyContent="space-between"
-                width="20vw"
-                height="calc(100vh-2rem)"
-            />
-            <Box width="80vw">{children}</Box>
-        </>
+            <Box backgroundColor="red" justifyContent="stretch" height="85vh">
+                <Sidebar
+                    flex="2"
+                    flexDirection="column"
+                    backgroundColor="grey"
+                    alignItems="center"
+                />
+
+                <Box flex="10" backgroundColor="darkerGrey">{children}</Box>
+            </Box>
+        </Box>
     );
 }
 

@@ -28,8 +28,11 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "react-beautiful-dnd": "^13.1.0",
         "react-icons": "^4.2.0",
+        "react-modal": "^3.14.3",
         "react-toastify": "^7.0.4",
+        "react-tooltip": "^4.2.21",
         "styled-components": "^5.3.0",
         "styled-system": "^5.1.5"
     }

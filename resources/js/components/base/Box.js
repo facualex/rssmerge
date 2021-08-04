@@ -9,6 +9,7 @@ import {
     shadow,
     system,
     grid,
+    position,
 } from "styled-system";
 import Icon from "./Icon";
 import Typography from "./Typography";
@@ -22,14 +23,25 @@ const Box = styled.div`
     ${border}
     ${shadow}
     ${grid}
+    ${position}
     ${system({
         cursor: true,
+        visibility: true,
     })}
+
+    transition: all 0.3s;
+
+     &:hover {
+        background-color: ${({ hoverProps, theme }) =>
+            hoverProps?.backgroundColor
+                ? theme.colors[hoverProps.backgroundColor]
+                : null};
+    }
 `;
 
-function BoxWrapper({ children, isLoading, ...props }) {
+function BoxWrapper({ children, isLoading, hoverProps, ...props }) {
     return (
-        <Box {...props}>
+        <Box hoverProps={hoverProps} {...props}>
             {isLoading ? (
                 <Box
                     display="flex"
