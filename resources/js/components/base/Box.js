@@ -39,9 +39,9 @@ const Box = styled.div`
     }
 `;
 
-function BoxWrapper({ children, isLoading, hoverProps, ...props }) {
+function BoxWrapper({ children, isLoading, hoverProps, innerRef, ...props }) {
     return (
-        <Box hoverProps={hoverProps} {...props}>
+        <Box hoverProps={hoverProps} ref={innerRef} {...props}>
             {isLoading ? (
                 <Box
                     display="flex"

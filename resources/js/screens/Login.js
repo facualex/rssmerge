@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Input, Button } from "../components";
 import { useAuth } from '../context/AuthProvider';
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const initialState = {
     email: "",
@@ -60,7 +60,6 @@ function Login() {
             height="100vh"
             isLoading={false}
         >
-            <ToastContainer />
             <Typography type="H3" marginTop="4" marginLeft="5">
                 RSSMerge
             </Typography>
@@ -104,7 +103,7 @@ function Login() {
                     paddingY="3"
                     width="85%"
                     isLoading={isLoading}
-                    onClick={handleLogin}
+                    onClick={isLoading ? null : handleLogin}
                 >
                     <Typography fontWeight="bold">LOGIN</Typography>
                 </Button>

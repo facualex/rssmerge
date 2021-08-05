@@ -1,6 +1,6 @@
 import { Box, Typography, Icon, Button } from "../../components";
 import { useFeedMixManager } from "../../context/FeedMixProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function Header(props) {
     const { selectedFeedMix } = useFeedMixManager();
@@ -23,7 +23,6 @@ function Header(props) {
 
     return (
         <>
-            <ToastContainer />
             <Box {...props}>
                 <Box alignItems="center" width="50%">
                     {selectedFeedMixId === null ? (

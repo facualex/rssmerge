@@ -1,5 +1,15 @@
 import styled, { keyframes, useTheme } from "styled-components";
-import { FiLoader, FiCopy, FiRefreshCw, FiEdit, FiTrash, FiPlusCircle } from "react-icons/fi";
+import {
+    FiLoader,
+    FiCopy,
+    FiRefreshCw,
+    FiEdit,
+    FiTrash,
+    FiPlusCircle,
+    FiPlusSquare,
+    FiMove,
+    FiXCircle,
+} from "react-icons/fi";
 
 const rotate = keyframes`
   from {
@@ -24,6 +34,9 @@ const availableIcons = {
     edit: FiEdit,
     delete: FiTrash,
     addCircle: FiPlusCircle,
+    addSquare: FiPlusSquare,
+    move: FiMove,
+    closeCircle: FiXCircle,
 };
 
 function Icon({ type, spin = false, color, ...props }) {

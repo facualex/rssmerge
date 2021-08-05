@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, Button, Input } from "../../components";
+import { Box, Typography, Button, Input, Icon } from "../../components";
 import { useAuth } from "../../context/AuthProvider";
 import { useFeedMixManager } from "../../context/FeedMixProvider";
 import API from "../../config/api";
 
-import { ToastContainer, toast } from "react-toastify";
-import { typography } from "styled-system";
+import { toast } from "react-toastify";
 
 const initialState = {
     searchTerm: "",
@@ -64,9 +63,30 @@ function Sidebar(props) {
                 onChange={setInput}
             />
 
-            <ToastContainer />
+            <Box
+                width="100%"
+                backgroundColor="darkGrey"
+                paddingX="6"
+                paddingY="2"
+                justifyContent="center"
+                alignItems="center"
+                cursor="pointer"
+                hoverProps={{
+                    backgroundColor: "darkerGrey",
+                }}
+            >
+                <Icon type="addSquare" color="primary" />
+                <Typography
+                    color="primary"
+                    type="H4"
+                    marginLeft="2"
+                    fontWeight="bold"
+                >
+                    New mix
+                </Typography>
+            </Box>
 
-            <Box flexDirection="column" paddingBottom="7">
+            <Box flexDirection="column">
                 {feedMixes.map((id) => {
                     const { cronTriggerTime, name, urlIdentifier } =
                         feedMixesById[id];

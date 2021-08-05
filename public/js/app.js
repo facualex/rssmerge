@@ -3839,7 +3839,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon */ "./resources/js/components/base/Icon.js");
 /* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Typography */ "./resources/js/components/base/Typography.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["children", "isLoading", "hoverProps"];
+var _excluded = ["children", "isLoading", "hoverProps", "innerRef"];
 
 var _templateObject;
 
@@ -3874,10 +3874,12 @@ function BoxWrapper(_ref2) {
   var children = _ref2.children,
       isLoading = _ref2.isLoading,
       hoverProps = _ref2.hoverProps,
+      innerRef = _ref2.innerRef,
       props = _objectWithoutProperties(_ref2, _excluded);
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Box, _objectSpread(_objectSpread({
-    hoverProps: hoverProps
+    hoverProps: hoverProps,
+    ref: innerRef
   }, props), {}, {
     children: isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Box, {
       display: "flex",
@@ -4099,7 +4101,10 @@ var availableIcons = {
   refresh: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiRefreshCw,
   edit: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiEdit,
   "delete": react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiTrash,
-  addCircle: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiPlusCircle
+  addCircle: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiPlusCircle,
+  addSquare: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiPlusSquare,
+  move: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiMove,
+  closeCircle: react_icons_fi__WEBPACK_IMPORTED_MODULE_2__.FiXCircle
 };
 
 function Icon(_ref) {
@@ -5160,7 +5165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AuthenticatedApp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
-  return __webpack_require__.e(/*! import() */ "resources_js_screens_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./screens/AuthenticatedApp */ "./resources/js/screens/AuthenticatedApp.js"));
+  return __webpack_require__.e(/*! import() */ "resources_js_screens_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./screens/AuthenticatedApp */ "./resources/js/screens/AuthenticatedApp/index.js"));
 });
 var UnauthenticatedApp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_screens_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./screens/UnauthenticatedApp */ "./resources/js/screens/UnauthenticatedApp.js"));
